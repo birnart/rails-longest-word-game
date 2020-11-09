@@ -1,6 +1,9 @@
 <h1>Score</h1>
 <hr>
 <h2><%= @score %></h2>
+<% if @score == "Congradulations! #{@guess} is a valid English word!" %>
+  <h3><%= @points %>/10 Points</h3>
+<% end %>
 <hr>
 <hr class="second-hr">
 <%= link_to "play again", new_path %>

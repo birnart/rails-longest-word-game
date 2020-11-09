@@ -42,7 +42,7 @@
   text-align: center;
   font-size: 50px;
  }
- h2 {
+ h2, h3 {
   font-weight: lighter;
   text-align: center;
  }
@@ -60,20 +60,33 @@ a {
   text-decoration: none;
   font-size: 20px;
   font-weight: lighter;
-  margin-left: 46%;
+  margin-left: 45%;
   border-radius: 5px;
   padding: 5px;
-  color: grey;
-  background-color: white;
-  border: 2px solid grey;
+  color: white;
+  background-color: rgb(3, 173, 252);
+  border: 2px solid white;
+  transition: 0.3s;
 }
 
 a:hover {
+  color: rgb(3, 173, 252);
+  background-color: white;
+  border: 2px solid rgb(3, 173, 252);
+}
+.btn {
   color: white;
-  background-color: grey;
-  border: 2px solid grey;
+  background-color: rgb(3, 173, 252);
+  border: 2px solid rgb(3, 173, 252);
+  transition: 0.3s;
+  border-radius: 5px;
 }
 
+.btn:hover {
+  color: rgb(3, 173, 252);
+  background-color: white;
+  border: 2px solid rgb(3, 173, 252);
+}
 .second-hr {
   opacity: 0;
 }

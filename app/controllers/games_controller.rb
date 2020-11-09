@@ -1,23 +1,24 @@
 class GamesController < ApplicationController
   def new
     @grid = []
-    6.times do
+    10.times do
       letter = ("A".."Z").to_a.sample
       @grid << letter
     end
-    @@grid = @grid
   end
 
   def score
     @guess = params[:word].upcase
+    @grid = params[:grid]
     if !english_word?(@guess)
       @score = "Sorry but #{@guess} does not seem to be a valid English word..."
-    elsif !@guess.chars.all? { |letter| @guess.count(letter) <= @@grid.count(letter) }
-      @score = "Sorry but #{@guess} can´t be built from #{@@grid.join(", ")}"
+    elsif !@guess.chars.all? { |letter| @guess.count(letter) <= @grid.count(letter) }
+      @score = "Sorry but #{@guess} can´t be built from #{@grid}"
     else
       @score = "Congradulations! #{@guess} is a valid English word!"
     end
-    return @score
+    @points = @guess.length
+    @total_score
   end
 
   private
